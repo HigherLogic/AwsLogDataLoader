@@ -1,0 +1,15 @@
+CREATE TABLE [dbo].[{0}](
+	[RequestDateTime] [datetime2](7) NULL,
+	[ProxyName] [varchar](50) NULL,
+	[SourceEndpoint] [varchar](50) NULL,
+	[DestinationEndpoint] [varchar](50) NULL,
+	[RequestProcessingTime] [decimal](20, 12) NULL,
+	[BackendProcessingTime] [decimal](20, 12) NULL,
+	[ResponseProcessingTime] [decimal](20, 12) NULL,
+	[ElbStatusCode] [smallint] NULL,
+	[BackendStatusCode] [smallint] NULL,
+	[ReceivedBytes] [bigint] NULL,
+	[SentBytes] [bigint] NULL,
+	[Request] [varchar](max) NULL,
+	[UserAgent] [varchar](max) NULL
+);

@@ -1,0 +1,17 @@
+11.0
+15
+1  SQLCHAR		0	50		" "		1	RequestDateTime			SQL_Latin1_General_CP1_CI_AS
+2  SQLCHAR		0	50		" "		2	ProxyName				SQL_Latin1_General_CP1_CI_AS
+3  SQLCHAR		0	50		" "		3	SourceEndpoint			SQL_Latin1_General_CP1_CI_AS
+4  SQLCHAR		0	50		" "		4	DestinationEndpoint		SQL_Latin1_General_CP1_CI_AS
+5  SQLCHAR		0	12		" "		5	RequestProcessingTime	SQL_Latin1_General_CP1_CI_AS
+6  SQLCHAR		0	12		" "		6	BackendProcessingTime	SQL_Latin1_General_CP1_CI_AS
+7  SQLCHAR		0	12		" "		7	ResponseProcessingTime	SQL_Latin1_General_CP1_CI_AS
+8  SQLCHAR		0	4		" "		8	ElbStatusCode			SQL_Latin1_General_CP1_CI_AS
+9  SQLCHAR		0	4		" "		9	BackendStatusCode		SQL_Latin1_General_CP1_CI_AS
+10 SQLCHAR		0	20		" "		10	ReceivedBytes			SQL_Latin1_General_CP1_CI_AS
+11 SQLCHAR		0	20		" \""	11	SentBytes				SQL_Latin1_General_CP1_CI_AS
+12 SQLCHAR		0	8000	"\" \""	12	Request					SQL_Latin1_General_CP1_CI_AS
+13 SQLCHAR		0	8000	"\" "	13	UserAgent				SQL_Latin1_General_CP1_CI_AS
+14 SQLCHAR		0	8000	" "		14	TlsCipher 				SQL_Latin1_General_CP1_CI_AS
+15 SQLCHAR		0	8000	"\n"	15	TlsProtocol				SQL_Latin1_General_CP1_CI_AS

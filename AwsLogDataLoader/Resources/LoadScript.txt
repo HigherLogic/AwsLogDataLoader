@@ -1,0 +1,22 @@
+INSERT INTO [{0}]
+SELECT
+	CAST(RequestDateTime AS datetime2) [RequestDateTime],
+	CAST(ProxyName AS VARCHAR(50)) [ProxyName],
+	CAST(SourceEndpoint AS VARCHAR(50)) [SourceEndpoint],
+	CAST(DestinationEndpoint AS VARCHAR(50)) [DestinationEndpoint],
+	CAST(RequestProcessingTime AS DECIMAL(20, 12)) [RequestProcessingTime],
+	CAST(BackendProcessingTime AS DECIMAL(20, 12)) [BackendProcessingTime],
+	CAST(ResponseProcessingTime AS DECIMAL(20, 12)) [ResponseProcessingTime],
+	(CASE WHEN ElbStatusCode = '-' THEN NULL ELSE CAST(ElbStatusCode AS SMALLINT) END) [ElbStatusCode],
+	(CASE WHEN BackendStatusCode = '-' THEN NULL ELSE CAST(BackendStatusCode AS SMALLINT) END) [BackendStatusCode],
+	CAST(ReceivedBytes AS BIGINT) AS [ReceivedBytes],
+	CAST(SentBytes AS BIGINT) AS [SentBytes],
+	CAST(Request AS VARCHAR(8000)) [Request],
+	(CASE WHEN UserAgent = '-' THEN NULL ELSE CAST(UserAgent AS VARCHAR(8000)) END) [UserAgent]
+FROM
+(
+	SELECT
+		*
+	FROM
+		OPENROWSET(BULK '{1}', FORMATFILE = '{2}') as [raw]
+) conv
